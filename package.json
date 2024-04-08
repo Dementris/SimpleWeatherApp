@@ -1,0 +1,33 @@
+{
+  "name": "weather-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "npx prettier . --check",
+    "format:fix": "npx prettier . --write",
+    "prepare": "husky",
+    "start": "node src/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.3.3",
+    "express": "^4.19.2",
+    "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.4.5",
+    "eslint": "^9.0.0",
+    "globals": "^15.0.0",
+    "husky": "^9.0.11",
+    "prettier": "3.2.5",
+    "pug": "^3.0.2"
+  }
+}
