@@ -33,7 +33,7 @@ app.get("/weather/:city?", (req, res) => {
   if (city) {
     geocoding_url = `https://api.openweathermap.org/data/2.5/weather?q=${city},UA&appid=${apiKey}&units=metric`;
   } else {
-    if (!location['longitude'] || !location['latitude']) {
+    if (!location["longitude"] || !location["latitude"]) {
       res.status(400);
       res.render(resolve(viewsPath, "error.pug"), {
         message: "Bad Request: Error location undefined",
