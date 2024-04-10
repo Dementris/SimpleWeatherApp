@@ -5,6 +5,7 @@
 package-lock.json
 .husky
 eslint.config.js
+node_modules
 
 # User-specific stuff
 .idea/**/workspace.xml

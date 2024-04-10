@@ -13,7 +13,6 @@ const __dirname = resolve(fileURLToPath(import.meta.url));
 const viewsPath = resolve(__dirname, "../views");
 const apiKey = `${process.env.WEATHER_API_KEY}`;
 
-app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.set("view engine", "pug");
@@ -33,7 +32,7 @@ app.get("/weather/:city?", (req, res) => {
   if (city) {
     geocoding_url = `https://api.openweathermap.org/data/2.5/weather?q=${city},UA&appid=${apiKey}&units=metric`;
   } else {
-    if (!location["longitude"] || !location["latitude"]) {
+    if (!location) {
       res.status(400);
       res.render(resolve(viewsPath, "error.pug"), {
         message: "Bad Request: Error location undefined",
